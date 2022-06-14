@@ -112,7 +112,7 @@ const Formulario = ({ creditos, setCreditos, credito, setCredito }) => {
             placeholder="deuda del cliente"
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
             value={deuda}
-            onChange={(e) => setDeuda(e.target.value)}
+            onChange={(e) => setDeuda(Number(e.target.value))}
           />
         </div>
 

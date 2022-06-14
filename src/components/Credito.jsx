@@ -1,6 +1,13 @@
 const Credito = ({ credito, setCredito, eliminarCredito }) => {
   const { nombre, deuda, fecha, descripcion, id } = credito;
 
+  const formatearCantidad = (cantidad) => {
+    return cantidad.toLocaleString("es-CL", {
+      style: "currency",
+      currency: "CLP",
+    });
+  };
+
   const handleEliminar = () => {
     const respuesta = confirm("Deseas eliminar este paciente?");
 
@@ -18,7 +25,9 @@ const Credito = ({ credito, setCredito, eliminarCredito }) => {
 
       <p className="font-bold mb-3 text-gray-700 uppercase">
         Deuda: {""}
-        <span className="font-normal normal-case">$ {deuda}</span>
+        <span className="font-normal normal-case">
+          {formatearCantidad(deuda)} CLP
+        </span>
       </p>
 
       <p className="font-bold mb-3 text-gray-700 uppercase">
