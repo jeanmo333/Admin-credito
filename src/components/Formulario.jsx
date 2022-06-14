@@ -32,6 +32,10 @@ const Formulario = ({ creditos, setCreditos, credito, setCredito }) => {
       console.log("Hay Al Menos un campo vacio");
 
       setError(true);
+
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
       return;
     }
 
