@@ -8,6 +8,16 @@ const Credito = ({ credito, setCredito, eliminarCredito }) => {
     });
   };
 
+  const formatearFecha = (fecha) => {
+    const fechaNueva = new Date(fecha);
+    const opciones = {
+      year: "numeric",
+      month: "numeric",
+      day: "2-digit",
+    };
+    return fechaNueva.toLocaleDateString("es-CL", opciones);
+  };
+
   const handleEliminar = () => {
     const respuesta = confirm("Deseas eliminar este paciente?");
 
@@ -26,13 +36,13 @@ const Credito = ({ credito, setCredito, eliminarCredito }) => {
       <p className="font-bold mb-3 text-gray-700 uppercase">
         Deuda: {""}
         <span className="font-normal normal-case">
-          {formatearCantidad(deuda)} CLP
+          {formatearCantidad(deuda)}
         </span>
       </p>
 
       <p className="font-bold mb-3 text-gray-700 uppercase">
         Fecha Alta: {""}
-        <span className="font-normal normal-case">{fecha}</span>
+        <span className="font-normal normal-case">{formatearFecha(fecha)}</span>
       </p>
 
       <p className="font-bold mb-3 text-gray-700 uppercase">
