@@ -15,7 +15,7 @@ const Credito = ({ credito, setCredito, eliminarCredito }) => {
       month: "numeric",
       day: "2-digit",
     };
-    return fechaNueva.toLocaleDateString("es-CL", opciones);
+    return fechaNueva.toLocaleDateString("es-ES", opciones);
   };
 
   const handleEliminar = () => {
