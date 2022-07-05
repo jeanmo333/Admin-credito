@@ -9,7 +9,7 @@ const Credito = ({ credito, setCredito, eliminarCredito }) => {
   };
 
   const formatearFecha = (fecha) => {
-    const fechaNueva = new Date(fecha);
+    const fechaNueva = new Date(fecha.split("T")[0].split("-"));
     const opciones = {
       year: "numeric",
       month: "numeric",
